@@ -335,7 +335,7 @@ Reserve Your Slot 🚀
 <option>ALL STAR PK</option>
 </select>
 
-<input id="gmail" class="full" placeholder="Gmail">
+<input id="PREV.QUOTA" class="full" placeholder="PREV. QUOTA">
 <input id="date" type="date" class="full">
 </div>
 
