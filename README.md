@@ -435,7 +435,7 @@ Choose your preferred OPK event and schedule.
 
 <input id="level" placeholder="Level">
 
-<input id="Last Month Quota" class="full" placeholder="Last Month Quota">
+<input id="PrevQuota" class="full" placeholder="Last Month Quota">
 
 <select id="eventType" class="full">
 <option value="">Select Event</option>
