@@ -813,8 +813,7 @@ if(bookingLoading) return;
 
 bookingLoading = true;
 
-const bookBtn =
-document.getElementById("bookBtn");
+const bookBtn = document.getElementById("bookBtn");
 
 bookBtn.disabled = true;
 
@@ -822,15 +821,23 @@ bookBtn.innerText = "Processing...";
 
 const booking = {
 
-name:document.getElementById("name").value.trim(),
-bigoId:document.getElementById("bigoId").value.trim(),
-agency:document.getElementById("agency").value.trim(),
-level:document.getElementById("level").value.trim(),
-gmail:document.getElementById("PrevQuota").value.trim(),
-eventType:document.getElementById("eventType").value,
-date:document.getElementById("date").value,
-slot:selectedSlot,
-createdAt:serverTimestamp()
+name: document.getElementById("name").value.trim(),
+
+bigoId: document.getElementById("bigoId").value.trim(),
+
+agency: document.getElementById("agency").value.trim(),
+
+level: document.getElementById("level").value.trim(),
+
+prevQuota: document.getElementById("PrevQuota").value.trim(),
+
+eventType: document.getElementById("eventType").value,
+
+date: document.getElementById("date").value,
+
+slot: selectedSlot,
+
+createdAt: serverTimestamp()
 
 };
 
@@ -839,7 +846,7 @@ if(
 !booking.bigoId ||
 !booking.agency ||
 !booking.level ||
-!booking.PrevQuota ||
+!booking.prevQuota ||
 !booking.eventType ||
 !booking.date ||
 !booking.slot
@@ -857,8 +864,7 @@ return;
 
 }
 
-const alreadyBooked =
-bookings.find(
+const alreadyBooked = bookings.find(
 x => x.date === booking.date &&
 x.slot === booking.slot
 );
@@ -891,14 +897,32 @@ showReceipt(booking);
 await loadBookings();
 
 document.getElementById("name").value = "";
+
 document.getElementById("bigoId").value = "";
+
 document.getElementById("agency").value = "";
+
 document.getElementById("level").value = "";
+
 document.getElementById("PrevQuota").value = "";
+
 document.getElementById("eventType").value = "";
+
 document.getElementById("date").value = "";
 
 selectedSlot = "";
+
+document.querySelectorAll(".slot-btn")
+.forEach(btn => btn.classList.remove("selected"));
+
+bookBtn.innerText = "Reserved Successfully ✓";
+
+setTimeout(() => {
+bookBtn.innerText = "Reserve Now";
+bookBtn.disabled = false;
+}, 1200);
+
+bookingLoading = false;
 
 }catch(error){
 
@@ -906,13 +930,13 @@ console.error(error);
 
 alert("Booking failed.");
 
-}
-
 bookBtn.disabled = false;
 
 bookBtn.innerText = "Reserve Now";
 
 bookingLoading = false;
+
+}
 
 }
 
