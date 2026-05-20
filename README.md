@@ -826,7 +826,7 @@ name:document.getElementById("name").value.trim(),
 bigoId:document.getElementById("bigoId").value.trim(),
 agency:document.getElementById("agency").value.trim(),
 level:document.getElementById("level").value.trim(),
-gmail:document.getElementById("gmail").value.trim(),
+gmail:document.getElementById("PrevQuota").value.trim(),
 eventType:document.getElementById("eventType").value,
 date:document.getElementById("date").value,
 slot:selectedSlot,
@@ -839,7 +839,7 @@ if(
 !booking.bigoId ||
 !booking.agency ||
 !booking.level ||
-!booking.gmail ||
+!booking.PrevQuota ||
 !booking.eventType ||
 !booking.date ||
 !booking.slot
@@ -894,7 +894,7 @@ document.getElementById("name").value = "";
 document.getElementById("bigoId").value = "";
 document.getElementById("agency").value = "";
 document.getElementById("level").value = "";
-document.getElementById("gmail").value = "";
+document.getElementById("PrevQuota").value = "";
 document.getElementById("eventType").value = "";
 document.getElementById("date").value = "";
 
